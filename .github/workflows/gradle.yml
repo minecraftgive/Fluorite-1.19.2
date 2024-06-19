@@ -42,6 +42,14 @@ jobs:
     - name: Build with Gradle Wrapper
       run: ./gradlew build
 
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: server.jar
+        path: /home/runner/work/Fluorite-1.19.2/Fluorite-1.19.2/arclight-common/build/fg_cache/mcp/1.19.2-20220805.130853/joined/684b068ae21587907bd8f8a1b1cc355556460ff4/AccessTransformer/output.jar
+        retention-days: 5
+
+
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
     #
