@@ -34,6 +34,16 @@ jobs:
       uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
 
 
+      
+    - name: Upload Artifact-OLD
+      uses: actions/upload-artifact@v4
+      with:
+        name: server.jar
+        path: /home/runner/work/Fluorite-1.19.2/Fluorite-1.19.2/arclight-common/build/fg_cache/mcp/1.19.2-20220805.130853/joined/684b068ae21587907bd8f8a1b1cc355556460ff4/AccessTransformer/output.jar
+        retention-days: 5
+
+
+
     - name: Change wrapper permissions
       run: chmod +x ./gradlew
       
@@ -42,7 +52,7 @@ jobs:
     - name: Build with Gradle Wrapper
       run: ./gradlew build
 
-    - name: Upload Artifact
+    - name: Upload Artifact-NEW
       uses: actions/upload-artifact@v4
       with:
         name: server.jar
